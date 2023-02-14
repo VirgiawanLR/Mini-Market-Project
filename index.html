@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+  <body>
+    <!--[if lt IE 7]>
+      <p class="browsehappy">
+        You are using an <strong>outdated</strong> browser. Please
+        <a href="#">upgrade your browser</a> to improve your experience.
+      </p>
+    <![endif]-->
+    <h1 class="heading">Interactive Market</h1>
+    <form action="">
+      <fieldset>
+        <legend>filter</legend>
+        <p>
+          <label for="nameOfGood">Nama: </label>
+          <input
+            type="text"
+            name="name"
+            id="nameOfGood"
+            oninput="filterName()"
+          /><br />
+        </p>
+        <p>
+          <label for="lowPrice">Harga: </label>
+          <input
+            type="number"
+            name="price"
+            id="low_price"
+            onkeyup="filterPrice()"
+          />
+          -
+          <input
+            type="number"
+            name="price"
+            id="high_price"
+            onkeyup="filterPrice()"
+          />
+        </p>
+        <p>
+          <label for="">Category: </label>
+          <select
+            name="category_filter"
+            id="category_filter"
+            onchange="filterCat()"
+          ></select>
+        </p>
+        <p>
+          <input type="button" value="Reset" onclick="resetFilter()" />
+        </p>
+        <!-- onclick attribute on button means that whenever user click on button they will trigerred
+    the function that declare on its value-->
+      </fieldset>
+    </form>
+    <form action="">
+      <fieldset>
+        <legend>Input Data</legend>
+        <table>
+          <td>
+            <input type="text" name="name_input" placeholder="Name" />
+          </td>
+          <td>
+            <input type="number" name="price_input" placeholder="Price" />
+          </td>
+          <td>
+            <select name="category_input"></select>
+          </td>
+          <td>
+            <input type="number" name="stock_input" placeholder="Stock" />
+          </td>
+        </table>
+        <p>
+          <input type="button" value="Input" onclick="inputData()" />
+        </p>
+      </fieldset>
+    </form>
+    <form action="">
+      <fieldset>
+        <legend>Data Table</legend>
+        <table>
+          <thead>
+            <th>ID</th>
+            <th>Category</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Buy</th>
+            <th colspan="2">Action</th>
+          </thead>
+          <tbody id="body_table"></tbody>
+        </table>
+      </fieldset>
+    </form>
+    <form action="">
+      <fieldset>
+        <legend>Cart</legend>
+        <table>
+          <thead>
+            <th>ID</th>
+            <th>Category</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Qty</th>
+            <th>Action</th>
+          </thead>
+          <tbody id="cart_table"></tbody>
+        </table>
+        <p>
+          <input type="button" value="Payment" onclick="transactionDetail()" />
+        </p>
+      </fieldset>
+    </form>
+    <form action="">
+      <fieldset>
+        <legend>Transaction</legend>
+        <p id="cartDetail"></p>
+      </fieldset>
+    </form>
+    <script src="./index.js" async defer></script>
+  </body>
+</html>
