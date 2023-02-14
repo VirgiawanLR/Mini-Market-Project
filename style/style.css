@@ -1,0 +1,20 @@
+/**
+TAG STYLE
+**/
+
+table,
+th,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 10px;
+}
+
+form {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.heading {
+  text-align: center;
+}
